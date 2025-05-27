@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  pdf-converter:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      # アップロードファイルとPDF出力を永続化
+      - ./uploads:/app/uploads
+      - ./output:/app/output
+    environment:
+      - NODE_ENV=production
+      - LANG=ja_JP.UTF-8
+      - LC_ALL=ja_JP.UTF-8
+    restart: unless-stopped
+    container_name: document-pdf-converter
