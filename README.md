@@ -1,6 +1,6 @@
 # Office to PDF Converter
 
-Microsoft Office ファイル（.doc, .docx, .ppt, .pptx）をPDFに変換するWebアプリケーションです。
+Microsoft Office ファイル（.doc, .docx, .ppt, .pptx, .xls, .xlsx）をPDFに変換するWebアプリケーションです。
 
 ## 機能
 
@@ -9,6 +9,7 @@ Microsoft Office ファイル（.doc, .docx, .ppt, .pptx）をPDFに変換する
 - フォルダ一括選択機能
 - 変換後PDFファイルのダウンロード
 - レスポンシブデザイン
+- **Excel複数シート対応** - 複数シートがあるExcelファイルは各シートに見出しを付けて同一PDFに結合
 
 ## セットアップ
 
@@ -92,11 +93,14 @@ npm run dev
 
 - Microsoft Word: .doc, .docx
 - Microsoft PowerPoint: .ppt, .pptx
+- Microsoft Excel: .xls, .xlsx（複数シートがある場合は見出し付きで同一PDFに結合）
 
 ## 技術スタック
 
 - **バックエンド**: Node.js, Express.js
 - **PDF変換**: LibreOffice (libreoffice-convert)
+- **Excel処理**: xlsx ライブラリ（複数シート対応）
+- **PDF結合**: pdf-merger-js（複数シートの統合PDF作成）
 - **フロントエンド**: HTML, CSS, JavaScript
 - **ファイルアップロード**: Multer
 
