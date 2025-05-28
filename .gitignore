@@ -81,7 +81,6 @@ dist
 
 # Gatsby files
 .cache/
-public
 
 # Vuepress build output
 .vuepress/dist
@@ -133,8 +132,8 @@ tmp/
 temp/
 
 # Document conversion temporary files
-uploads/
-output/
+uploads/*
+output
 *.tmp
 
 # LibreOffice lock files
