@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Office to PDF Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📄 Office to PDF Converter</h1>
+        <p>Microsoft Office ファイル（.doc, .docx, .ppt, .pptx, .xls, .xlsx）をPDFに変換します</p>
+        
+        <div class="upload-area" id="uploadArea">
+            <div class="upload-content">
+                <div class="upload-icon">📁</div>
+                <p>ファイルをドラッグ&ドロップするか、クリックして選択してください</p>
+                <input type="file" id="fileInput" multiple accept=".doc,.docx,.ppt,.pptx,.xls,.xlsx" hidden>
+                <button class="select-btn" onclick="document.getElementById('fileInput').click()">
+                    ファイルを選択
+                </button>
+                <button class="folder-btn" onclick="document.getElementById('folderInput').click()">
+                    フォルダを選択
+                </button>
+                <input type="file" id="folderInput" webkitdirectory multiple hidden>
+            </div>
+        </div>
+
+        <div class="file-list" id="fileList"></div>
+        
+        <button class="convert-btn" id="convertBtn" disabled onclick="convertFiles()">
+            PDFに変換
+        </button>
+        
+        <div class="progress" id="progress" style="display: none;">
+            <div class="progress-bar" id="progressBar"></div>
+            <span class="progress-text" id="progressText">変換中...</span>
+        </div>
+        
+        <div class="download-controls">
+            <button class="download-all-btn" id="downloadAllBtn" onclick="downloadAllFiles()" style="display: none;">
+                全てダウンロード (0ファイル)
+            </button>
+            <button class="clear-btn" onclick="clearAllFiles()">
+                結果をクリア
+            </button>
+        </div>
+        
+        <div class="results" id="results"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

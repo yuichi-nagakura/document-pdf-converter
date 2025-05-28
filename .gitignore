@@ -132,7 +132,7 @@ tmp/
 temp/
 
 # Document conversion temporary files
-uploads
+uploads/*
 output
 *.tmp
 
